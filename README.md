@@ -9,7 +9,7 @@ This document specifies a [CBOR tag][iana-cbor-tags] 15 applied to any CBOR item
 Tag: 15
 Data item: any
 Semantics: Describes the type of the data item
-Point of contact: 0xZensh <txr1883@gmail.com>
+Point of contact: Yan Qing <txr1883@gmail.com>
 Description of semantics: https://github.com/cbor-schema/cbor-typeof-tag
 ```
 
@@ -19,7 +19,7 @@ This tag is used to express CBOR data structures (also known as CBOR Schema) in 
 ### Typeof Unsigned Integer
 An example of expressing unsigned integer with default value `0`:
 ```
-0xcf00    -- Diagnostic: 15(0)
+0xcf00    -- Diagnostic: 15(0), alias typeof(0)
 CF        -- Tag 15
    00     -- 0
 ```
@@ -31,7 +31,7 @@ Invalid CBOR items: `-1`, `"abc"`, `null`, ...
 ### Typeof Negative Integer
 An example of expressing negative integer with default value `-1`:
 ```
-0xcf20    -- Diagnostic: 15(-1)
+0xcf20    -- Diagnostic: 15(-1), alias typeof(-1)
 CF        -- Tag 15
    20     -- -1
 ```
@@ -43,7 +43,7 @@ Invalid CBOR items: `0`, `"abc"`, `null`, ...
 ### Typeof Byte String
 An example of expressing byte string with default zero bytes:
 ```
-0xcf40    -- Diagnostic: 15(h'')
+0xcf40    -- Diagnostic: 15(h''), alias typeof(h'')
 CF        -- Tag 15
    40     -- h''
 ```
@@ -55,7 +55,7 @@ Invalid CBOR items: `0`, `"abc"`, `null`, ...
 ### Typeof Text String
 An example of expressing text string with default empty text:
 ```
-0xcf60    -- Diagnostic: 15("")
+0xcf60    -- Diagnostic: 15(""), alias typeof("")
 CF        -- Tag 15
    60     -- ""
 ```
@@ -67,7 +67,7 @@ Invalid CBOR items: `0`, `h''`, `null`, ...
 ### Typeof Array
 #### An example of expressing array with any type of items:
 ```
-0xcf80    -- Diagnostic: 15([])
+0xcf80    -- Diagnostic: 15([]), alias typeof([])
 CF        -- Tag 15
    80     -- []
 ```
